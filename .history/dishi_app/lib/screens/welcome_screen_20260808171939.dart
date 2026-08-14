@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dashboard_screen.dart'; //acts as my homepage
+import 'dashboard_screen.dart'; // or your next page
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
