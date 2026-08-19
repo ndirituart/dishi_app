@@ -1,32 +1,28 @@
-import 'dart:developer';
-
-//firebase package imports
+//firebase imports later
+import 'package:dishi_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-// import 'package:dishi_app/components/custom_textfield.dart';
-//TODO: create components folder and add custom_textfield.dart file
-// import 'package:dishi_app/components/custom_button.dart';
-import 'package:dishi_app/screens/signup_screen.dart';
-import 'package:dishi_app/screens/welcome_screen.dart';
 import 'package:dishi_app/screens/home_screen.dart';
 import 'package:dishi_app/widgets/button.dart';
 import 'package:dishi_app/widgets/textfield.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  // final _auth = AuthService(); Auth service will be called once
+class _SignupScreenState extends State<SignupScreen> {
+  // final _auth = AuthService(); Auth service will be called once Firebase is set up
 
+  final _name = TextEditingController();
   final _email = TextEditingController();
   final _password = TextEditingController();
 
   @override
   void dispose() {
     super.dispose();
+    _name.dispose();
     _email.dispose();
     _password.dispose();
   }
@@ -40,10 +36,16 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             const Spacer(),
             const Text(
-              "Login",
+              "Signup",
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
             ),
             const SizedBox(height: 50),
+            CustomTextField(
+              hint: "Enter Name",
+              label: "Name",
+              controller: _name,
+            ),
+            const SizedBox(height: 20),
             CustomTextField(
               hint: "Enter Email",
               label: "Email",
@@ -53,12 +55,14 @@ class _LoginScreenState extends State<LoginScreen> {
             CustomTextField(
               hint: "Enter Password",
               label: "Password",
+              isPassword: true,
               controller: _password,
             ),
             const SizedBox(height: 30),
             CustomButton(
-              label: "Login",
-              // onPressed: _login, TODO: Implement login functionality once Firebase is set up
+              label: "Signup",
+              // onPressed: _signup, TODO: Implement sign up process once Firebase is set up
+              onPressed: () => goToHome(context),
             ),
             const SizedBox(height: 5),
             Row(
@@ -66,9 +70,9 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 const Text("Already have an account? "),
                 InkWell(
-                  onTap: () => goToSignup(context),
+                  onTap: () => goToLogin(context),
                   child: const Text(
-                    "Signup",
+                    "Login",
                     style: TextStyle(color: PrimaryColor),
                   ),
                 ),
@@ -81,9 +85,9 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  goToSignup(BuildContext context) => Navigator.push(
+  goToLogin(BuildContext context) => Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => const SignupScreen()),
+    MaterialPageRoute(builder: (context) => const LoginScreen()),
   );
 
   goToHome(BuildContext context) => Navigator.push(
@@ -91,13 +95,12 @@ class _LoginScreenState extends State<LoginScreen> {
     MaterialPageRoute(builder: (context) => const HomeScreen()),
   );
 
-  // _login() async {
+  // _signup() async {
   //   final user =
-  //       await _auth.loginUserWithEmailAndPassword(_email.text, _password.text);
-
+  //       await _auth.createUserWithEmailAndPassword(_email.text, _password.text);
   //   if (user != null) {
-  //     log("User Logged In");
+  //     log("User Created Succesfully");
   //     goToHome(context);
   //   }
-  // } TODO: Implement login functionality once Firebase is set up
+  // } //TODO: Implement signup functionality once Firebase is set up
 }

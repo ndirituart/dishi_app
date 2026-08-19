@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 //firebase package imports
 import 'package:flutter/material.dart';
 // import 'package:dishi_app/components/custom_textfield.dart';
@@ -59,6 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
             CustomButton(
               label: "Login",
               // onPressed: _login, TODO: Implement login functionality once Firebase is set up
+              onPressed: () => goToHome(context),
             ),
             const SizedBox(height: 5),
             Row(

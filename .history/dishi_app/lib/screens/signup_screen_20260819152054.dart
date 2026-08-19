@@ -7,7 +7,6 @@ import 'package:dishi_app/screens/home_screen.dart';
 import 'package:dishi_app/widgets/button.dart';
 import 'package:dishi_app/widgets/textfield.dart';
 
-
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
@@ -38,11 +37,11 @@ class _SignupScreenState extends State<SignupScreen> {
         child: Column(
           children: [
             const Spacer(),
-            const Text("Signup",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500)),
-            const SizedBox(
-              height: 50,
+            const Text(
+              "Signup",
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
             ),
+            const SizedBox(height: 50),
             CustomTextField(
               hint: "Enter Name",
               label: "Name",
@@ -67,14 +66,20 @@ class _SignupScreenState extends State<SignupScreen> {
               // onPressed: _signup,
             ),
             const SizedBox(height: 5),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              const Text("Already have an account? "),
-              InkWell(
-                onTap: () => goToLogin(context),
-                child: const Text("Login", style: TextStyle(color: Colors.red)),
-              )
-            ]),
-            const Spacer()
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text("Already have an account? "),
+                InkWell(
+                  onTap: () => goToLogin(context),
+                  child: const Text(
+                    "Login",
+                    style: TextStyle(color: PrimaryColor),
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(),
           ],
         ),
       ),
@@ -82,14 +87,14 @@ class _SignupScreenState extends State<SignupScreen> {
   }
 
   goToLogin(BuildContext context) => Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const LoginScreen()),
-      );
+    context,
+    MaterialPageRoute(builder: (context) => const LoginScreen()),
+  );
 
   goToHome(BuildContext context) => Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-      );
+    context,
+    MaterialPageRoute(builder: (context) => const HomeScreen()),
+  );
 
   // _signup() async {
   //   final user =

@@ -35,8 +35,10 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           children: [
             const Spacer(),
-            const Text("Login",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500)),
+            const Text(
+              "Login",
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
+            ),
             const SizedBox(height: 50),
             CustomTextField(
               hint: "Enter Email",
@@ -50,20 +52,22 @@ class _LoginScreenState extends State<LoginScreen> {
               controller: _password,
             ),
             const SizedBox(height: 30),
-            CustomButton(
-              label: "Login",
-              onPressed: _login,
-            ),
+            CustomButton(label: "Login", onPressed: _login),
             const SizedBox(height: 5),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              const Text("Already have an account? "),
-              InkWell(
-                onTap: () => goToSignup(context),
-                child:
-                    const Text("Signup", style: TextStyle(color: Colors.red)),
-              )
-            ]),
-            const Spacer()
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text("Already have an account? "),
+                InkWell(
+                  onTap: () => goToSignup(context),
+                  child: const Text(
+                    "Signup",
+                    style: TextStyle(color: PrimaryColor),
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(),
           ],
         ),
       ),
@@ -71,18 +75,20 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   goToSignup(BuildContext context) => Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const SignupScreen()),
-      );
+    context,
+    MaterialPageRoute(builder: (context) => const SignupScreen()),
+  );
 
   goToHome(BuildContext context) => Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-      );
+    context,
+    MaterialPageRoute(builder: (context) => const HomeScreen()),
+  );
 
   _login() async {
-    final user =
-        await _auth.loginUserWithEmailAndPassword(_email.text, _password.text);
+    final user = await _auth.loginUserWithEmailAndPassword(
+      _email.text,
+      _password.text,
+    );
 
     if (user != null) {
       log("User Logged In");

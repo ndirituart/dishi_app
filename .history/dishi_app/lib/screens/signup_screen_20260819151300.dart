@@ -68,7 +68,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   onTap: () => goToLogin(context),
                   child: const Text(
                     "Login",
-                    style: TextStyle(color: Colors.red),
+                    style: TextStyle(color: PrimaryColor),
                   ),
                 ),
               ],

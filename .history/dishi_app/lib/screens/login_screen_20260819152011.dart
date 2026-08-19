@@ -2,7 +2,7 @@ import 'dart:developer';
 
 //firebase package imports
 import 'package:flutter/material.dart';
-// import 'package:dishi_app/components/custom_textfield.dart'; 
+// import 'package:dishi_app/components/custom_textfield.dart';
 //TODO: create components folder and add custom_textfield.dart file
 // import 'package:dishi_app/components/custom_button.dart';
 import 'package:dishi_app/screens/signup_screen.dart';
@@ -19,7 +19,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  // final _auth = AuthService(); Auth service will be called once 
+  // final _auth = AuthService(); Auth service will be called once
 
   final _email = TextEditingController();
   final _password = TextEditingController();
@@ -39,8 +39,10 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           children: [
             const Spacer(),
-            const Text("Login",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500)),
+            const Text(
+              "Login",
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
+            ),
             const SizedBox(height: 50),
             CustomTextField(
               hint: "Enter Email",
@@ -56,18 +58,23 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 30),
             CustomButton(
               label: "Login",
-              // onPressed: _login, 
+              // onPressed: _login,
             ),
             const SizedBox(height: 5),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              const Text("Already have an account? "),
-              InkWell(
-                onTap: () => goToSignup(context),
-                child:
-                    const Text("Signup", style: TextStyle(color: Colors.red)),
-              )
-            ]),
-            const Spacer()
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text("Already have an account? "),
+                InkWell(
+                  onTap: () => goToSignup(context),
+                  child: const Text(
+                    "Signup",
+                    style: TextStyle(color: PrimaryColor),
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(),
           ],
         ),
       ),
@@ -75,14 +82,14 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   goToSignup(BuildContext context) => Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const SignupScreen()),
-      );
+    context,
+    MaterialPageRoute(builder: (context) => const SignupScreen()),
+  );
 
   goToHome(BuildContext context) => Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-      );
+    context,
+    MaterialPageRoute(builder: (context) => const HomeScreen()),
+  );
 
   // _login() async {
   //   final user =
