@@ -14,9 +14,8 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-          
               Image.asset(
-                './assets/logo.png', 
+                './assets/logo.png',
                 height: 180,
                 width: 180,
                 fit: BoxFit.contain,
@@ -47,11 +46,7 @@ class WelcomeScreen extends StatelessWidget {
               // Subtitle
               const Text(
                 'Track your meals effortlessly and stay in control of your nutrition every day.',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey,
-                  height: 1.5,
-                ),
+                style: TextStyle(fontSize: 16, color: Colors.grey, height: 1.5),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 60),
@@ -63,7 +58,7 @@ class WelcomeScreen extends StatelessWidget {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const DashboardScreen(),
+                        builder: (context) => const HomeScreen(),
                       ),
                     );
                   },
@@ -77,7 +72,7 @@ class WelcomeScreen extends StatelessWidget {
                     elevation: 0,
                   ),
                   child: const Text(
-                    'Continue',
+                    'Login',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,

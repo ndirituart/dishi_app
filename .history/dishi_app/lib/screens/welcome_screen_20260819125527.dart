@@ -183,7 +183,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       shadowColor: const Color(#713600).withOpacity(0.3),
                     ),
                     child: const Text(
-                      'Continue',
+                      'Login',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
@@ -203,12 +203,12 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const DashboardScreen(),
+                      builder: (context) => const HomeScreen(),
                     ),
                   );
                 },
                 child: const Text(
-                  'Skip for now',
+                  'Not a member? Register now!',
                   style: TextStyle(
                     fontSize: 14,
                     color: Color(0xFFB0B0B0),

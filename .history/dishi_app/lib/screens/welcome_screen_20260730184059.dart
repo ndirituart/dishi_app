@@ -24,7 +24,7 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             // Polka Dot Pattern Background
             _buildPolkaDots(),
-            
+
             // Main Content
             Center(
               child: Column(
@@ -36,10 +36,7 @@ class WelcomeScreen extends StatelessWidget {
                     height: 150,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(
-                        color: Colors.white,
-                        width: 4,
-                      ),
+                      border: Border.all(color: Colors.white, width: 4),
                       boxShadow: [
                         BoxShadow(
                           // ignore: deprecated_member_use
@@ -54,9 +51,9 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  
+
                   const SizedBox(height: 40),
-                  
+
                   // Welcome Text
                   const Text(
                     'Welcome to',
@@ -83,16 +80,16 @@ class WelcomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  
+
                   const SizedBox(height: 60),
-                  
+
                   // PROCEED Button
                   ElevatedButton(
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const DashboardScreen(),
+                          builder: (context) => const HomeScreen(),
                         ),
                       );
                     },
@@ -132,18 +129,18 @@ class WelcomeScreen extends StatelessWidget {
     List<Widget> dots = [];
     const dotSize = 20.0;
     const spacing = 80.0;
-    
+
     // Get screen size
     return LayoutBuilder(
       builder: (context, constraints) {
         final width = constraints.maxWidth;
         final height = constraints.maxHeight;
-        
+
         for (double y = 0; y < height; y += spacing) {
           for (double x = 0; x < width; x += spacing) {
             final isOffset = (y ~/ spacing) % 2 == 1;
             final xPos = isOffset ? x + spacing / 2 : x;
-            
+
             dots.add(
               Positioned(
                 left: xPos,

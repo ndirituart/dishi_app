@@ -14,7 +14,7 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            //TODO: Create logo and replace the placeholder with the actual logo image. Make sure to add the image to your assets folder and update pubspec.yaml accordingly.
+              //TODO: Create logo and replace the placeholder with the actual logo image. Make sure to add the image to your assets folder and update pubspec.yaml accordingly.
               Image.asset(
                 '../assets/logo.png', // change to your image path
                 height: 180,
@@ -47,11 +47,7 @@ class WelcomeScreen extends StatelessWidget {
               // Subtitle
               const Text(
                 'Track your meals effortlessly and stay in control of your nutrition every day.',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.grey,
-                  height: 1.5,
-                ),
+                style: TextStyle(fontSize: 16, color: Colors.grey, height: 1.5),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 60),
@@ -63,7 +59,7 @@ class WelcomeScreen extends StatelessWidget {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const DashboardScreen(),
+                        builder: (context) => const HomeScreen(),
                       ),
                     );
                   },
@@ -77,7 +73,7 @@ class WelcomeScreen extends StatelessWidget {
                     elevation: 0,
                   ),
                   child: const Text(
-                    'Continue',
+                    'Login',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,

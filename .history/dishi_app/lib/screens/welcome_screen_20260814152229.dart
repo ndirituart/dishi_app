@@ -63,7 +63,7 @@ class WelcomeScreen extends StatelessWidget {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const DashboardScreen(),
+                        builder: (context) => const HomeScreen(),
                       ),
                     );
                   },
@@ -77,7 +77,7 @@ class WelcomeScreen extends StatelessWidget {
                     elevation: 0,
                   ),
                   child: const Text(
-                    'Continue',
+                    'Login',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w600,

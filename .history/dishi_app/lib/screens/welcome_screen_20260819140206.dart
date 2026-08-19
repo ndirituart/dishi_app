@@ -14,7 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Dishi App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: primaryColor), //Theme app color changed to primaryColor from constants.dart
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: primaryColor,
+        ), //Theme app color changed to primaryColor from constants.dart
         useMaterial3: true,
       ),
       home: const WelcomeScreen(),
@@ -70,7 +72,9 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFDFBD4), //Change background color to match the app's theme
+      backgroundColor: const Color(
+        0xFFFDFBD4,
+      ), //Change background color to match the app's theme
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -83,10 +87,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 builder: (context, child) {
                   return Transform.translate(
                     offset: Offset(0, _slideAnimation.value),
-                    child: Opacity(
-                      opacity: _fadeAnimation.value,
-                      child: child,
-                    ),
+                    child: Opacity(opacity: _fadeAnimation.value, child: child),
                   );
                 },
                 child: Image.asset(
@@ -128,7 +129,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       style: TextStyle(
                         fontSize: 38,
                         fontWeight: FontWeight.w800,
-                        color: textColor, //Change text color to match the app's theme
+                        color:
+                            textColor, //Change text color to match the app's theme
                         letterSpacing: 0.5,
                         height: 1.1,
                       ),
@@ -139,7 +141,8 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       'Track your meals effortlessly and stay in control of your nutrition every day.',
                       style: TextStyle(
                         fontSize: 16,
-                        color: textColor, //Change text color to match the app's theme
+                        color:
+                            textColor, //Change text color to match the app's theme
                         fontWeight: FontWeight.w500,
                         height: 1.6,
                         letterSpacing: 0.3,
@@ -172,24 +175,28 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text('Welcome to Dishi! 🍽️'),
-                          backgroundColor: backgroundColor, //Change snackbar background color to match the app's theme
+                          backgroundColor:
+                              backgroundColor, //Change snackbar background color to match the app's theme
                           behavior: SnackBarBehavior.floating,
                           duration: Duration(seconds: 2),
                         ),
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: primaryColor, //Change button background color to match the app's theme
-                      foregroundColor: backgroundColor, //Change button text color to match the app's theme
+                      backgroundColor:
+                          primaryColor, //Change button background color to match the app's theme
+                      foregroundColor:
+                          backgroundColor, //Change button text color to match the app's theme
                       padding: const EdgeInsets.symmetric(vertical: 18),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16),
                       ),
                       elevation: 4,
-                      shadowColor: secondaryColor, //Change button shadow color to match the app's theme
+                      shadowColor:
+                          secondaryColor, //Change button shadow color to match the app's theme
                     ),
                     child: const Text(
-                      'Continue',
+                      'Login',
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
@@ -206,18 +213,19 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               TextButton(
                 //to nvigate to dashboard
                 onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const DashboardScreen(), //c
-                      ),
-                    );
-                  },
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomeScreen(), //c
+                    ),
+                  );
+                },
                 child: const Text(
-                  'Skip for now',
+                  'Not a member? Register now!',
                   style: TextStyle(
                     fontSize: 14,
-                    color: textColor, //Change text color to match the app's theme
+                    color:
+                        textColor, //Change text color to match the app's theme
                     letterSpacing: 0.5,
                     fontWeight: FontWeight.w500,
                   ),
