@@ -13,7 +13,7 @@ class WelcomeScreen extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFF6C63FF), // Purple
+              Color(#713600), // Purple
               Color(0xFF3F3D9E), // Deep blue
             ],
           ),
@@ -43,7 +43,7 @@ class WelcomeScreen extends StatelessWidget {
                   child: const Icon(
                     Icons.business,
                     size: 80,
-                    color: Color(0xFF6C63FF),
+                    color: Color(#713600),
                   ),
                 ),
                 const SizedBox(height: 40),
